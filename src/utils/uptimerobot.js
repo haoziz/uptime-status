@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import Axios from 'axios';
 import { fixed } from './helper';
 
-const Api = 'https://api.uptimerobot.com/v2/getMonitors';
+const Api = 'https://proxy.haozi.xyz/uptimerobot/v2/getMonitors';
 
 export const GetMonitors = async (apikey, days) => {
 
