@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - lts/*
+before_script:
+  - npm install
+script: npm run build
+before_deploy:
+  - cd /home/travis/build/haoziz/uptime-status/build
+  - sudo apt-get -y install zip
+  - zip -r uptime-status.zip *
+deploy:
+  provider: releases
+  api_key: ${GITHUB_TOKEN}
+  file:
+  - uptime-status.zip
+  skip_cleanup: true
+  on:
+    tags: true
